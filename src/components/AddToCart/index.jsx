@@ -1,6 +1,7 @@
 import {Box, BeerImage, LeftSide, RightSide} from "../Card/style"
 
 const AddToCart = ({beer}) => {
+
     return (
         <>
             <li>

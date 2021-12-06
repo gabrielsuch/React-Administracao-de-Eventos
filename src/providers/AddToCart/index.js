@@ -20,8 +20,26 @@ export const AddToCartProvider = ({children}) => {
         setConfraternization([...confraternization, beer])
     }
 
+    const removeFromGraduation = (beer) => {
+        setGraduation(graduation.filter((product) => {
+            return product.id !== beer.id
+        }))
+    }
+
+    const removeFromWedding = (beer) => {
+        setWedding(wedding.filter((product) => {
+            return product.id !== beer.id
+        }))
+    }
+
+    const removeFromConfraternization = (beer) => {
+        setConfraternization(confraternization.filter((product) => {
+            return product.id !== beer.id
+        }))
+    }
+
     return (
-        <AddToCartContext.Provider value={{addToGraduation, addToWedding, addToConfraternization, graduation, setGraduation, wedding, setWedding, confraternization, setConfraternization}}>
+        <AddToCartContext.Provider value={{addToGraduation, addToWedding, addToConfraternization, graduation, setGraduation, wedding, setWedding, confraternization, setConfraternization, removeFromGraduation, removeFromWedding, removeFromConfraternization}}>
             {children}
         </AddToCartContext.Provider>
     )

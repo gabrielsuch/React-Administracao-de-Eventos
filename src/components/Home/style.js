@@ -59,6 +59,8 @@ export const Main = styled.div `
     width: 70%;
     margin: 20px auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 
     ul{
         display: flex;

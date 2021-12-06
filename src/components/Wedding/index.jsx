@@ -6,10 +6,11 @@ import {useHistory} from "react-router-dom"
 import {useContext} from "react"
 import {AddToCartContext} from "../../providers/AddToCart/index"
 import AddToCart from "../AddToCart/index"
+import {Remove, Adjust} from "../AddToCart/style"
 
 const Wedding = () => {
 
-    const {wedding} = useContext(AddToCartContext)
+    const {wedding, removeFromWedding} = useContext(AddToCartContext)
 
     const history = useHistory()
 
@@ -29,7 +30,14 @@ const Wedding = () => {
                 <ul>
                 {
                     wedding.map((beer, index) => (
-                        <AddToCart key={index} beer={beer}/>
+                        <>
+                            <Adjust>
+                                <AddToCart key={index} beer={beer}/>
+                                <Remove>
+                                    <button onClick={() => removeFromWedding(beer)}>Remover</button>
+                                </Remove>
+                            </Adjust>
+                        </>
                     ))
                 }
                 </ul>
